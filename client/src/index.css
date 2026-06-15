@@ -1,0 +1,350 @@
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #111827;
+    color: white;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.game-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lobby-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #111827;
+}
+
+.lobby-card {
+    width: 350px;
+
+    background: #1f2937;
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.lobby-card h1 {
+    margin: 0;
+
+    font-size: 2rem;
+}
+
+.lobby-card p {
+    color: #9ca3af;
+
+    margin: 0;
+}
+
+.room-input {
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #374151;
+
+    color: white;
+
+    font-size: 1rem;
+
+    text-align: center;
+}
+
+.primary-btn,
+.secondary-btn {
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: #10b981;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: #059669;
+}
+
+.secondary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+
+    color: #6b7280;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #374151;
+}
+
+.divider span {
+    margin: 0 12px;
+}
+
+.square {
+    border: none;
+
+    background: #1f2937;
+
+    color: white;
+
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    transition: 0.15s;
+}
+
+.square:hover {
+    background: #374151;
+}
+
+.game-card {
+    background: #1f2937;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.player-badge {
+    background: #2563eb;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+}
+
+.status-badge {
+    background: #374151;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+}
+
+.board {
+    display: grid;
+
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+
+    gap: 8px;
+}
+
+.game {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.x-turn {
+    color: #60a5fa;
+}
+
+.o-turn {
+    color: #f87171;
+}
+
+.reset {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border: none;
+    background: #222;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reset:hover {
+    background: #444;
+}
+
+.x {
+    color: #60a5fa;
+}
+
+.o {
+    color: #f87171;
+}
+
+.winner-banner {
+    margin-bottom: 16px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    animation: popIn 0.25s ease;
+}
+
+.draw-banner {
+    margin-bottom: 16px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #4b5563,
+        #6b7280
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.winner-x {
+    color: #bfdbfe;
+}
+
+.winner-o {
+    color: #fecaca;
+}
+
+.waiting-card {
+    background: #1f2937;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    min-width: 300px;
+}
+
+.rematch-btn {
+    width: 100%;
+
+    margin-bottom: 16px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.rematch-btn:hover {
+    background: #1d4ed8;
+}
