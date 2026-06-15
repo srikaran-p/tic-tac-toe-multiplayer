@@ -7,8 +7,8 @@ function Game() {
     const [joinedRoom, setJoinedRoom] = useState(null);
     const [game, setGame] = useState(null);
     const [role, setRole] = useState(null);
-    const [rematchVotes, setRematchVotes] = useState(null);
     const [playerCount, setPlayerCount] = useState(0);
+    const [rematchVotes, setRematchVotes] = useState(null);
 
     useEffect(() => {
         const handleGameState = (state) => {
